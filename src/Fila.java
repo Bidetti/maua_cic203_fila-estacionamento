@@ -1,5 +1,5 @@
 public class Fila {
-    private int[] dados;
+    private String[] dados;
     private int tamanho, prim, ult;
 
     public Fila() {
@@ -7,7 +7,7 @@ public class Fila {
     }
 
     public Fila(int capacidade) {
-        dados = new int[capacidade];
+        dados = new String[capacidade];
         prim = 0;
         ult = 0;
         tamanho = 0;
@@ -25,24 +25,28 @@ public class Fila {
         return (pos + 1) % dados.length;
     }
 
-    void enfileira(int i) {
+    void enfileira(String i) {
         dados[ult] = i;
         ult = proxima(ult);
         tamanho++;
     }
 
-    public int desenfilera() {
-        int i = dados[prim];
+    public String desenfilera() {
+        String i = dados[prim];
         prim = proxima(prim);
         tamanho--;
         return i;
     }
 
+    public int getTamanho() {
+        return tamanho;
+    }
+
     @Override
     public String toString() {
-        String s = "fila: ";
+        String s = "Estacionamento: ";
         if (estaVazia()) {
-            s += "estÃ¡ vazia.";
+            s += "está vazio.";
         } else {
             int i = prim;
             do {
