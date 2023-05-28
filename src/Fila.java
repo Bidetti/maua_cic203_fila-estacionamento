@@ -42,6 +42,14 @@ public class Fila {
         return tamanho;
     }
 
+    public int getPrim() {
+        return prim;
+    }
+
+    public int getUlt() {
+        return ult;
+    }
+
     @Override
     public String toString() {
         String s = "Estacionamento: ";

@@ -31,13 +31,15 @@ public class QueuePark {
 
                 while (!estacionamento.estaVazia()) {
                     String carro = String.valueOf(estacionamento.desenfilera());
-                    deslocamentos++;
                     if (carro.equalsIgnoreCase(placa)) {
                         carroEncontrado = true;
-                        break;
                     }else {
                         estacionamento.enfileira(carro);
                     }
+                    if (deslocamentos == estacionamento.getTamanho()) {
+                        break;
+                    }
+                    deslocamentos++;
                 }
 
                 if (carroEncontrado) {
